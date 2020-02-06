@@ -19,7 +19,7 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="HobbyCell" rowHeight="80" id="LHb-lh-Xi1" customClass="FriendTableViewCell" customModule="hobby_tracker_2" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="FriendCell" rowHeight="80" id="LHb-lh-Xi1" customClass="FriendTableViewCell" customModule="hobby_tracker_2" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="LHb-lh-Xi1" id="8X0-SV-8xQ">
@@ -64,7 +64,7 @@
                                             <outlet property="hometownLabel" destination="7PP-dt-uWc" id="rgA-dy-IoU"/>
                                             <outlet property="nameLabel" destination="IT3-E8-7Ih" id="Hzg-7M-80b"/>
                                             <outlet property="numberOfHobbiesLabel" destination="CXZ-WA-K8a" id="d4c-ZU-rK7"/>
-                                            <segue destination="m8C-ZV-kq4" kind="show" id="I9S-Or-Pfi"/>
+                                            <segue destination="m8C-ZV-kq4" kind="show" identifier="LoadFriendSegue" id="I9S-Or-Pfi"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -82,7 +82,7 @@
                     <navigationItem key="navigationItem" title="Hobby Tracker 2" id="Wda-Xg-Jk0">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="3en-2P-7jR">
                             <connections>
-                                <segue destination="sfd-sP-f9f" kind="presentation" id="vZJ-wC-fjP"/>
+                                <segue destination="sfd-sP-f9f" kind="presentation" identifier="AddFriendSegue" id="vZJ-wC-fjP"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -211,9 +211,6 @@
                                         <rect key="frame" x="0.0" y="286" width="374" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
-                                        <connections>
-                                            <action selector="hobbie3TextField:" destination="sfd-sP-f9f" eventType="editingDidEnd" id="xOX-1B-aIl"/>
-                                        </connections>
                                     </textField>
                                 </subviews>
                             </stackView>

@@ -10,7 +10,7 @@ import UIKit
 
 class FriendDetailViewController: UIViewController {
     
-//MARK:                  -- IBOutlets and IBActions --
+//MARK: -- IBOutlets and IBActions --
     
     @IBOutlet var image: UIImageView!
     @IBOutlet var nameLabel: UILabel!

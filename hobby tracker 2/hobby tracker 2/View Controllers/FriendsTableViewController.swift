@@ -10,7 +10,7 @@ import UIKit
 
 class FriendsTableViewController: UIViewController, UITableViewDelegate {
 
-//MARK: --  IBOutlets  --
+//MARK: --  IBOutlets and IBActions  --
     @IBOutlet var tableView: UITableView!
     
 //MARK: -- Properties --
@@ -26,21 +26,36 @@ class FriendsTableViewController: UIViewController, UITableViewDelegate {
     }
     
 
+
 }
 
 
 extension FriendsTableViewController: UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return friends.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "FriendCell", for: indexPath) as? FriendTableViewCell else {return UITableViewCell()}
-        
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "FriendCell", for: indexPath) as? FriendTableViewCell else { return UITableViewCell() }
         let friend = friends[indexPath.row]
         cell.friend = friend
         return cell
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "AddFriendSegue" {
+            let addFriendVC = segue.destination as! AddFriendViewController
+            addFriendVC.delegate = self
+        }
+    }
+}
+
+//MARK: - Delegate Setup -
+extension FriendsTableViewController: AddFriendDelegate {
+    func friendWasCreated(friend: Friend) {
+        self.friends.append(friend)
+        tableView.reloadData()
     }
 }
 
